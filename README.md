@@ -157,8 +157,8 @@ project tree.
    |---|---|
    | Name | `Run - default output` |
    | Module / JDK | `candidate-transformer` (Java 17) |
-   | Main class | `com.eightfold.Main` |
-   | Program arguments | `--inputs sample-inputs/inputs_full.json --out output.json` |
+   | Main class | `com.eightfold.transformer.Main` |
+   | Program arguments | `sample-input` |
    | Working directory | `$MODULE_WORKING_DIR$` (the project root) |
 
 4. Click **OK**, then click ▶ to run.
@@ -173,7 +173,7 @@ Repeat step 3 with a different name and arguments:
 | Field | Value |
 |---|---|
 | Name | `Run -> custom config output` |
-| Program arguments | `--inputs sample-inputs/inputs_full.json --config sample-inputs/custom_config.json --out custom_output.json` |
+| Program arguments | `sample-inputs --config sample-inputs/custom_config.json --output custom_output.json` |
 
 Switch between the two configs using the dropdown next to the ▶ button.
 
@@ -221,17 +221,17 @@ exist: `Run -> Add Configuration`). Add:
       "type": "java",
       "name": "Run - default output",
       "request": "launch",
-      "mainClass": "com.eightfold.Main",
+      "mainClass": "com.eightfold.transformer.Main",
       "projectName": "candidate-transformer",
-      "args": "--inputs sample-inputs/inputs_full.json --out output.json"
+      "args": "sample-inputs"
     },
     {
       "type": "java",
       "name": "Run - custom config output",
       "request": "launch",
-      "mainClass": "com.eightfold.Main",
+      "mainClass": "com.eightfold.transformer.Main",
       "projectName": "candidate-transformer",
-      "args": "--inputs sample-inputs/inputs_full.json --config sample-inputs/custom_config.json --out custom_output.json"
+      "args": "sample-inputs --config sample-inputs/custom_config.json --output custom_output.json"
     }
   ]
 }
