@@ -1,0 +1,49 @@
+[ {
+  "full_name" : "Priya Sharma",
+  "primary_email" : "priya.sharma@example.com",
+  "phone" : "+919876543210",
+  "headline" : "Senior Software Engineer",
+  "location_city" : "Bangalore",
+  "location_country" : "IN",
+  "linkedin" : "https://linkedin.com/in/priyasharma",
+  "github" : null,
+  "skills" : [ "Java", "Spring Boot", "AWS", "Kubernetes", "PostgreSQL", "Rest Apis" ],
+  "years_experience" : 6,
+  "overall_confidence" : 0.8166666666666667
+}, {
+  "full_name" : "Vikram Nair",
+  "primary_email" : "vikram.nair@example.com",
+  "phone" : null,
+  "headline" : "ML Engineer",
+  "location_city" : "Hyderabad",
+  "location_country" : "IN",
+  "linkedin" : null,
+  "github" : "https://github.com/vikramnair",
+  "skills" : [ "Python", "TensorFlow", "PyTorch", "NLP", "Docker" ],
+  "years_experience" : 4,
+  "overall_confidence" : 0.8
+}, {
+  "full_name" : "Rahul Mehta",
+  "primary_email" : "rahul.mehta@example.com",
+  "phone" : "+919123456789",
+  "headline" : null,
+  "location_city" : null,
+  "location_country" : null,
+  "linkedin" : null,
+  "github" : null,
+  "skills" : null,
+  "years_experience" : null,
+  "overall_confidence" : 0.85
+}, {
+  "full_name" : "Ananya Singh",
+  "primary_email" : "ananya.singh@example.com",
+  "phone" : null,
+  "headline" : null,
+  "location_city" : null,
+  "location_country" : null,
+  "linkedin" : null,
+  "github" : null,
+  "skills" : null,
+  "years_experience" : null,
+  "overall_confidence" : 0.85
+} ]

@@ -1,0 +1,11 @@
+Candidate Notes - Priya Sharma
+================================
+Name: Priya Sharma
+Email: priya.sharma@example.com
+Phone: +91 98765 43210
+Location: Bangalore
+Title: Senior Software Engineer
+Years Experience: 6
+Skills: Java, Spring Boot, Kubernetes, AWS, PostgreSQL, REST APIs
+LinkedIn: https://linkedin.com/in/priyasharma
+Notes: Strong candidate. 6+ years backend experience. Open to relocation. Salary expectation 40 LPA.

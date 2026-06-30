@@ -1,0 +1,34 @@
+#  IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+#  Maven build output
+target/
+
+# Specific jars visible in your project
+candidate-transformer-*.jar
+original-candidate-transformer-*.jar
+dependency-reduced-pom.xml
+
+#  Runtime / pipeline output
+#output.json
+#custom_output.json
+#*.output.json
+
+#  Java class files
+*.class
+
+#  OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+#  Environment / secrets
+
+.env
+*.env
+*.token
+secrets.properties

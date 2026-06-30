@@ -1,0 +1,64 @@
+[
+  {
+    "candidate_name": "Priya Sharma",
+    "email_address": "priya.sharma@example.com",
+    "mobile": "+919876543210",
+    "current_title": "Senior Software Engineer",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "country": "India",
+    "linkedin_url": "https://linkedin.com/in/priyasharma",
+    "years_experience": 6,
+    "skills": ["Java", "Spring Boot", "AWS", "Kubernetes", "PostgreSQL"],
+    "work_history": [
+      {
+        "employer": "Google",
+        "position": "Senior Software Engineer",
+        "start_date": "2021-03",
+        "end_date": null
+      },
+      {
+        "employer": "Flipkart",
+        "position": "Software Engineer",
+        "start_date": "2018-07",
+        "end_date": "2021-02"
+      }
+    ],
+    "academic_background": [
+      {
+        "university": "IIT Bombay",
+        "qualification": "B.Tech",
+        "major": "Computer Science",
+        "graduation_year": "2018"
+      }
+    ]
+  },
+  {
+    "applicant_name": "Vikram Nair",
+    "email": "vikram.nair@example.com",
+    "phone_number": "08012345678",
+    "job_title": "ML Engineer",
+    "location_city": "Hyderabad",
+    "country_code": "IN",
+    "github": "https://github.com/vikramnair",
+    "experience_years": 4,
+    "competencies": ["Python", "TensorFlow", "PyTorch", "NLP", "Docker"],
+    "experience": [
+      {
+        "company": "Amazon",
+        "title": "ML Engineer",
+        "start": "2022-01",
+        "end": null,
+        "description": "Building recommendation systems at scale"
+      }
+    ],
+    "education": [
+      {
+        "school": "BITS Pilani",
+        "degree": "B.E.",
+        "subject": "Electronics",
+        "end_year": "2019"
+      }
+    ]
+  }
+]
