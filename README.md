@@ -11,7 +11,9 @@ and a runtime-configurable output schema.
 
 - [Project structure](#project-structure)
 - [Pipeline overview](#pipeline-overview)
-- [Run steps](#run-steps)
+- [Run steps terminal](#run-steps)
+- [Run steps (IntelliJ)](#run-steps-intellij)
+- [Run steps (VS Code)](#run-steps-vs-code)
 - [Produced output](#produced-output)
 - [Canonical output schema](#canonical-output-schema)
 - [Normalization rules](#normalization-rules)
@@ -122,6 +124,135 @@ Arguments:
 ```
 
 ---
+## Run steps (IntelliJ)
+
+You can build and run everything without ever opening a terminal, using
+IntelliJ's built-in Maven and Run tooling.
+
+### Step 1 - Open the project
+
+`File -> Open` -> select the `candidate-transformer` folder (the one containing
+`pom.xml`) -> click **OK**. IntelliJ will auto-import the Maven project and
+download dependencies.
+
+### Step 2 -> Build the shaded JAR via Maven panel
+
+1. Open the **Maven** panel (right sidebar, or `View -> Tool Windows -> Maven`).
+2. Expand `candidate-transformer -> Lifecycle`.
+3. Double-click **`clean`**, then double-click **`package`**.
+
+   Or do both in one shot: right-click `package` -> **Run Maven Build**.
+
+The jar appears at `target/candidate-transformer-1.0.0-shaded.jar` in the
+project tree.
+
+### Step 3 - Create a Run Configuration for the default output
+
+1. Click `Run -> Edit Configurations` (or the dropdown next to the ▶ button
+   -> **Edit Configurations**).
+2. Click **+** -> **Application**.
+3. Fill in:
+
+   | Field | Value |
+   |---|---|
+   | Name | `Run - default output` |
+   | Module / JDK | `candidate-transformer` (Java 17) |
+   | Main class | `com.eightfold.Main` |
+   | Program arguments | `--inputs sample-inputs/inputs_full.json --out output.json` |
+   | Working directory | `$MODULE_WORKING_DIR$` (the project root) |
+
+4. Click **OK**, then click ▶ to run.
+
+Output prints in the **Run** tab at the bottom, and `output.json` appears in
+the project root.
+
+### Step 4 - Create a second Run Configuration for custom config output
+
+Repeat step 3 with a different name and arguments:
+
+| Field | Value |
+|---|---|
+| Name | `Run -> custom config output` |
+| Program arguments | `--inputs sample-inputs/inputs_full.json --config sample-inputs/custom_config.json --out custom_output.json` |
+
+Switch between the two configs using the dropdown next to the ▶ button.
+
+### Step 5 - Run tests in IntelliJ
+
+Right-click `src/test/java/com/eightfold/TransformerTest.java` ->
+**Run 'TransformerTest'**.
+
+Or right-click the `test` folder -> **Run All Tests**.
+
+Results appear in the **Test Results** panel with green/red indicators per
+test method.
+
+---
+
+## Run steps (VS Code)
+
+### Prerequisites
+
+Install these VS Code extensions (one-time):
+- **Extension Pack for Java** (Microsoft) - includes Maven support and the Java debugger
+- **Maven for Java** (Microsoft) - adds the Maven sidebar
+
+### Step 1 - Open the project
+
+`File -> Open Folder` -> select `candidate-transformer` (the folder with
+`pom.xml`). VS Code will detect the Maven project automatically.
+
+### Step 2 - Build via Maven sidebar
+
+1. Open the **Maven** sidebar (beaker icon in the left panel).
+2. Expand `candidate-transformer -> Lifecycle`.
+3. Click ▶ next to **`clean`**, then ▶ next to **`package`**.
+
+### Step 3 - Create a launch config
+
+Open `.vscode/launch.json` (VS Code creates it automatically if it doesn't
+exist: `Run -> Add Configuration`). Add:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run - default output",
+      "request": "launch",
+      "mainClass": "com.eightfold.Main",
+      "projectName": "candidate-transformer",
+      "args": "--inputs sample-inputs/inputs_full.json --out output.json"
+    },
+    {
+      "type": "java",
+      "name": "Run - custom config output",
+      "request": "launch",
+      "mainClass": "com.eightfold.Main",
+      "projectName": "candidate-transformer",
+      "args": "--inputs sample-inputs/inputs_full.json --config sample-inputs/custom_config.json --out custom_output.json"
+    }
+  ]
+}
+```
+
+### Step 4 - Run
+
+`Run -> Start Debugging` (F5) -> pick the config from the dropdown at the top.
+
+Output prints in the **Debug Console** panel and `output.json` is written to
+the project root.
+
+### Step 5 - Run tests in VS Code
+
+Open `TransformerTest.java`. Green ▶ icons appear in the gutter next to each
+`@Test` method - click any one to run just that test, or click the class-level
+▶ to run all 22.
+
+---
+
+
 
 ## Produced output
 
@@ -155,6 +286,8 @@ Example record from `output.json`:
 ```
 
 ---
+
+
 
 ## Canonical output schema
 
